@@ -1,6 +1,8 @@
-# Meme Markets
+# Meme Markets (Alpha)
 
-Meme Markets is a decentralized protocol built on Ethereum that allows the decentralized monetization of *all* memes (not just the "dank" variety).
+(NOTE: This is currently very WIP. The code/dapp won't run as is atm. Take with a pinch of salt until finalised for test release).
+
+Meme Markets is a decentralized protocol built on Ethereum that allows the decentralized monetization of *all* information and its network effects (memes).
 
 One can tokenise interest in memes such as #ethereum, #simondlr, #vitalikbuterin, #harambe, #trump, #globalwarming, #football, #capetown, #USA, #twitter, #tcpip, #apple, #freemyvunk, etc without the requirement of a centralised intermediary.
 
@@ -8,7 +10,7 @@ By following a coded protocol in a smart contract that aims to express natural i
 
 By having no centralised intermediary, not requiring current legal systems to provide services (such as incorporation of an organisation) & a more visible & common focal (schelling point), it reduces the barrier to entry to coordinate economically across the internet. The hope is that will provide new forms of agency to many people: from the birth of new kinds of organisations, new communities, personal markets and even better coordination around solving some of the world’s biggest problems such as global warming.
 
-# Protocol Design
+# Protocol Design (Alpha)
 
 The alpha protocol (v0.1) currently works as follows:
 
@@ -16,14 +18,16 @@ The alpha protocol (v0.1) currently works as follows:
 -> The cost of the coupon is dependent on how many action coupons are currently in supply for that meme. This algorithm is set in stone for each meme. It accrues linearly until a point where exponential costs take over. It's designed such that is unlikely (too costly) that any meme will have an outstanding supply of more than 10m coupons.  
 -> Action coupons are dispensed for actions in the meme (anyone can build any app on top of this protocol to make the coupons usable/worth something).  
 
--> The beneficiary of the ETH used to buy the coupons are chosen by the buyer. A portion of funds are burnt to facilitate the fostering of the meme. For example, it will incentivize people to pay Vitalik Buterin in the #vitalikbuterin meme.  
--> Funds are locked for 1 month to avoid potential sybil attacks. This is a magic number and potential protocol improvements can be made.  
+-> The beneficiary of the ETH used to buy the coupons are chosen by the buyer.
+-> Funds are locked for 1 month to avoid potential sybil attacks. This is a magic number and potential protocol improvements can be made.
 
-The whitepaper of the protocol design can be found here: https://docs.google.com/document/d/1CKK2jBYToHfkDM1XH4uVCSjXqOB6LxH8KdZbp8JHkqI/edit?usp=sharing
+The whitepaper of the protocol design can be found here: https://docs.google.com/document/d/1CKK2jBYToHfkDM1XH4uVCSjXqOB6LxH8KdZbp8JHkqI/edit?usp=sharing (slightly out of date atm).
+
+The purpose of this alpha is to test assumptions about the design and also to foster discussions on improving the protocol before releasing it more widely.
 
 # Technicals
 
-This is built using Truffle (beta of 3.x).
+This is built using Truffle 3.x.
 
 Solidity API:
 
@@ -46,7 +50,7 @@ It uses [ERC20](https://github.com/ethereum/EIPs/issues/20) token standard as th
 ```function mintAndDispense(uint256 _amountToMint, address _beneficiary, address _for, uint256 _amount) payable```   
 ```function claimFunds() returns (bool success)```
 
-To build a dapp, you must let the users of your dapp approve your contract so that it can dispense coupons for any meme (in the meme markets). Otherwise, it works like a normal ERC20 token. You can approve a dapp for a specific meme, rather than *all* memes.
+To build a dapp, you must let the users of your dapp approve your contract so that it can dispense coupons for any meme (in the meme markets). Otherwise, it works like a normal ERC20 token. You can approve a dapp for a specific meme as well (usual ERC20), rather than *all* memes.
 
 # The Noticeboard Dapp
 
@@ -54,10 +58,12 @@ The first dapp built on Meme Markets is a Noticeboard dapp. You dispense action 
 
 # Development
 
-I'm still full-time involved @ ConsenSys, primarily developing Ujo & working on security/auditing of smart contracts. This is a side project, so any help will be appreciated.
+Most of my time is spend Ujo atm & working on security/auditing of smart contracts @ ConsenSys. The plan is to try and dogfood development of meme market with meme markets itself.
 
-The contract code is being finalized (mainly some last bits of optimization wrt state management of each meme), and the front-end has not started. I will like fork my [Token Factory](https://github.com/ConsenSys/token-factory) code and make simple forms.
+The contract code has been finalised with tests being written atm. The front-end is currently being developed as well.
 
 # Disclaimer
 
-It's very important to note that this is alpha software, and it can change/evolve as time goes on. Have fun. Check out #mememarkets (when it is live) for paying action coupons towards development of Meme Markets itself.
+It's very important to note that this is alpha software, and it can change/evolve as time goes on. Have fun. A testnet release is coming soon. Check out #mememarkets (when it is live) for paying action coupons towards development of Meme Markets itself.
+
+**This code is licensed under MIT.*
