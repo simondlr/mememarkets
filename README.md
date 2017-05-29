@@ -1,3 +1,11 @@
+# 29 May 2017 Update/NOTES
+
+Meme Markets is a coupon-based continuous token model. A follow-up iteration that I'm currently working for the time being is called "Curation Markets".
+
+Check this out instead: https://github.com/consensys/curationmarkets.
+
+This iteration below is not a priority atm. The Curation Markets repo has more info on the new model.
+
 # Meme Markets (Alpha)
 
 (NOTE: This is currently very WIP. The code/dapp won't run as is atm. Take with a pinch of salt until finalised for test release).
